@@ -12,8 +12,10 @@ app.get('/', function(req, res){
 // \Prints out in the terminal when a user connects/diconnects
 io.on('connection', function(socket){
   console.log(socket.id + ' connected');
+  io.emit('chat message', socket.id + " joined the room");
   socket.on('disconnect', function(){
     console.log(socket.id + ' disconnected');
+    io.emit('chat message', socket.id + " left the room");
   });
 });
 
