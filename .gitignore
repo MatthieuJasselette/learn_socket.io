@@ -4,3 +4,4 @@
 /storage/*.key
 /vendor
 npm-debug.log
+package-lock.json
