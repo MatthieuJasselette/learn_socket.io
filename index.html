@@ -18,8 +18,9 @@
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <!-- <script type="text/javascript" src="./app.js"></script> -->
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       $(function () {
         var socket = io();
@@ -30,9 +31,10 @@
           return false;
         });
         socket.on('chat message', function(msg){
+          console.log("message received");
           $('#messages').append($('<li>').text(msg));
         });
       });
-    </script>
+    </script> -->
   </body>
 </html>
