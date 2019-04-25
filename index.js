@@ -11,17 +11,17 @@ app.get('/', function(req, res){
 
 // \Prints out in the terminal when a user connects/diconnects
 io.on('connection', function(socket){
-  console.log('an user connected');
+  console.log(socket.id + ' connected');
   socket.on('disconnect', function(){
-    console.log('user disconnected');
+    console.log(socket.id + ' disconnected');
   });
 });
 
 // \Prints out a msg in the terminal and broadcasts it to connected users
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
-    console.log('message: ' + msg);
-    io.emit('chat message', msg);
+    console.log('message: ' + socket.id + " : " + msg);
+    io.emit('chat message', socket.id + " : " + msg);
   });
 });
 
